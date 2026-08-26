@@ -55,7 +55,7 @@ img { max-width: 100%; }
       <a href="https://branch.guestyowners.com" target="_blank" rel="noopener" style="display:flex; align-items:center; gap:6px; font-size: 13px; color: #6F7E64; letter-spacing: .3px; padding-left: 16px; border-left: 1px solid #E1E5DA; text-decoration:none;">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6F7E64" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5"/><path d="M15 12H3"/></svg>
         Owner Login</a>
-      <span class="btn btn-solid" style="padding: 13px 24px; font-size: 12px;">Book Now</span>
+      <a href="https://staywithbranch.com/stays/" class="btn btn-solid" style="padding: 13px 24px; font-size: 12px;">Book Now</a>
     </div>
   </div>
 
@@ -67,8 +67,8 @@ img { max-width: 100%; }
       <p class="serif-note" style="font-size: 25px; color: #6F7E64; margin: 18px 0 24px; line-height: 1.4;">We measure ourselves on what you actually take home.</p>
       <p style="font-size: 17.5px; max-width: 540px; color: #3C4238;">Boutique vacation rental management for the top 10% of homes in every market we serve. No stacked fees, transparent monthly statements, and a real person on the phone who knows your home by address.</p>
       <div style="display: flex; gap: 14px; margin-top: 36px;">
-        <span class="btn btn-solid">Book a call with our team</span>
-        <span class="btn btn-line">See how we work</span>
+        <a href="mailto:brandon@staywithbranch.com?subject=Property%20management%20enquiry&body=Hi%20Brandon%2C%0A%0AI%27d%20like%20to%20talk%20about%20having%20Branch%20manage%20my%20home.%0A%0AProperty%20address%20or%20listing%20link%3A%0A%0AThanks%2C" class="btn btn-solid">Book a call with our team</a>
+        <a href="#how-we-work" class="btn btn-line">See how we work</a>
       </div>
       <p style="font-size: 13.5px; color: #737373; margin-top: 20px;">A short, no obligation call. We will walk you through what your home could earn with us.</p>
     </div>
@@ -98,6 +98,7 @@ img { max-width: 100%; }
   </div>
 
   <!-- WHY OWNERS SWITCH -->
+<a id="how-we-work"></a>
   <div style="padding: 100px 70px 90px;">
     <div style="max-width: 620px; margin-bottom: 56px;">
       <span class="eyebrow">Why owners switch to Branch</span>
@@ -178,6 +179,7 @@ img { max-width: 100%; }
   </div>
 
   <!-- REVENUE ESTIMATE -->
+<a id="enquire"></a>
   <div style="display: grid; grid-template-columns: 1fr 520px; gap: 60px; padding: 100px 70px; align-items: center;">
     <div>
       <span class="eyebrow">Let's talk</span>
@@ -198,6 +200,42 @@ img { max-width: 100%; }
         <a class="btn btn-solid" href="mailto:brandon@staywithbranch.com?subject=Property%20management%20enquiry&body=Hi%20Brandon%2C%0A%0AI%27d%20like%20to%20talk%20about%20having%20Branch%20manage%20my%20home.%0A%0AProperty%20address%20or%20listing%20link%3A%0A%0AAnything%20you%20should%20know%3A%0A%0AThanks%2C"
            style="text-align:center; width:100%; display:block; box-sizing:border-box; text-decoration:none;">Book a call with our team</a>
         <p style="font-size:11.5px; color:#A3A3A3; text-align:center;">A short call, no obligation. We reply personally, and your details are never shared or sold.</p>
+
+        <!-- FOR HIDDEN GEM: this is the low-commitment path for owners who do not want a call.
+             In preview it opens the visitor's email client with the fields filled in, so it is
+             never a dead form. On the live site, replace onsubmit with your form handler and
+             send every submission to BOTH brandon@staywithbranch.com and owners@staywithbranch.com.
+             The second address is what feeds our lead tracking, so please do not drop it. -->
+        <div style="border-top:1px solid #E1E5DA; margin-top:20px; padding-top:20px;">
+          <div style="font-size:11px; letter-spacing:1.6px; text-transform:uppercase; color:#737373; font-weight:800; text-align:center; margin-bottom:14px;">Not ready for a call?</div>
+          <form id="owner-enquiry" style="display:flex; flex-direction:column; gap:12px;" onsubmit="return swbEnquiry(event)">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+              <div><label for="swb-name" style="font-size:11px; letter-spacing:1.4px; text-transform:uppercase; color:#737373; display:block; margin-bottom:6px; font-weight:800;">Name</label><input id="swb-name" name="name" required style="width:100%; padding:12px; border:1px solid #DCE0D6; border-radius:2px; font-size:14px; background:#FDFEFB; box-sizing:border-box;"></div>
+              <div><label for="swb-phone" style="font-size:11px; letter-spacing:1.4px; text-transform:uppercase; color:#737373; display:block; margin-bottom:6px; font-weight:800;">Phone</label><input id="swb-phone" name="phone" type="tel" style="width:100%; padding:12px; border:1px solid #DCE0D6; border-radius:2px; font-size:14px; background:#FDFEFB; box-sizing:border-box;"></div>
+            </div>
+            <div><label for="swb-email" style="font-size:11px; letter-spacing:1.4px; text-transform:uppercase; color:#737373; display:block; margin-bottom:6px; font-weight:800;">Email</label><input id="swb-email" name="email" type="email" required style="width:100%; padding:12px; border:1px solid #DCE0D6; border-radius:2px; font-size:14px; background:#FDFEFB; box-sizing:border-box;"></div>
+            <div><label for="swb-prop" style="font-size:11px; letter-spacing:1.4px; text-transform:uppercase; color:#737373; display:block; margin-bottom:6px; font-weight:800;">Property address or listing link</label><input id="swb-prop" name="property" style="width:100%; padding:12px; border:1px solid #DCE0D6; border-radius:2px; font-size:14px; background:#FDFEFB; box-sizing:border-box;"></div>
+            <div><label for="swb-note" style="font-size:11px; letter-spacing:1.4px; text-transform:uppercase; color:#737373; display:block; margin-bottom:6px; font-weight:800;">Anything we should know (optional)</label><textarea id="swb-note" name="note" rows="3" style="width:100%; padding:12px; border:1px solid #DCE0D6; border-radius:2px; font-size:14px; background:#FDFEFB; resize:vertical; box-sizing:border-box;"></textarea></div>
+            <button type="submit" class="btn btn-outline" style="width:100%; cursor:pointer; font-family:inherit;">Send my details instead</button>
+            <p style="font-size:11.5px; color:#A3A3A3; text-align:center; margin:0;">We reply personally, usually the same day. Your details are never shared or sold.</p>
+          </form>
+        </div>
+<script>
+function swbEnquiry(e){
+  e.preventDefault();
+  var f=e.target, v=function(id){var el=document.getElementById(id); return el&&el.value?el.value:"";};
+  var body="New owner enquiry from the Property Management page\n\n"
+    +"Name: "+v("swb-name")+"\n"
+    +"Phone: "+v("swb-phone")+"\n"
+    +"Email: "+v("swb-email")+"\n"
+    +"Property: "+v("swb-prop")+"\n\n"
+    +"Notes:\n"+v("swb-note")+"\n";
+  window.location.href="mailto:brandon@staywithbranch.com?cc=owners@staywithbranch.com"
+    +"&subject="+encodeURIComponent("Owner enquiry: "+(v("swb-name")||"website"))
+    +"&body="+encodeURIComponent(body);
+  return false;
+}
+</script>
         <div style="border-top: 1px solid #E1E5DA; margin-top: 6px; padding-top: 18px; text-align: center;">
           <div style="font-size: 11px; letter-spacing: 1.6px; text-transform: uppercase; color: #737373; font-weight: 800; margin-bottom: 8px;">Or reach Brandon directly</div>
           <div style="font-family: 'Castio', serif; font-size: 19px; color: #161A14;">Brandon Hughlett</div>
@@ -233,7 +271,7 @@ img { max-width: 100%; }
       <h2 style="color: #FDFEFB; font-size: 34px; line-height: 1.15;">Let's talk about your home.</h2>
       <p style="color: #E4E8DE; font-size: 16.5px; margin-top: 10px;">A short conversation, real numbers, and an honest answer either way.</p>
     </div>
-    <span class="btn" style="background: #FDFEFB; color: #161A14;">Book a call with our team</span>
+    <a href="#enquire" class="btn" style="background: #FDFEFB; color: #161A14;">See what your home could earn</a>
   </div>
 
   <!-- FOOTER -->
